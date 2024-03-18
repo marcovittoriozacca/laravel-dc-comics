@@ -18,7 +18,9 @@
                             <img class="h-100 w-100" src="{{$comic->thumb}}" alt="{{$comic->title}}">
                         </figure>
                         <div class="text-white">
-                            <h5>{{$comic->title}}</h5>
+                            <a class="text-white" href="{{route('comics.show', $comic->id)}}">
+                                <h5>{{$comic->title}}</h5>
+                            </a>
                         </div>
                     </div>
                     @endforeach
