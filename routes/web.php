@@ -212,5 +212,5 @@ Route::get('/', function () {
         ],
     ];
 
-    return view('comics', compact('navLinks', 'comics', 'footerLinks', 'socials'));
-})->name('comics');
+    return view('Comics.index', compact('navLinks', 'comics', 'footerLinks', 'socials'));
+})->name('Comics.index');
