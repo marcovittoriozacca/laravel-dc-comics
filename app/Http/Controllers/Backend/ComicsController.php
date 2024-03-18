@@ -216,7 +216,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        //creiamo un nuovo fumeto
+        //accediamo alla pagine contenente il form
         $navLinks = [
             [
                 "name" => "characters",

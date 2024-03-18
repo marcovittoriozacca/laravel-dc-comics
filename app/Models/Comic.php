@@ -17,6 +17,5 @@ class Comic extends Model
         'series',
         'sale_date',
         'type',
-
     ];
 }

@@ -41,6 +41,7 @@
                     name="price"
                     id="price"
                     min="0"
+                    step="any"
                 />
             </div>
             <div class="mb-3">
