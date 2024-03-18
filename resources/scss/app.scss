@@ -1,3 +1,99 @@
+@use './partials/variables' as *;
 @import "bootstrap/scss/bootstrap";
-@import "partials/mixins";
-@import "partials/variables";
+
+.my-blue-color{
+    color: $blue;
+}
+.my-blue-bg{
+    background-color: $blue;
+}
+.my-dark-color{
+    color: $dark;
+}
+.my-dark-bg{
+    background-color: $dark;
+}
+.input-border{
+    border-bottom: 3px solid $blue;
+}
+
+.my-max-h{
+    height: 240px;
+    img{
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    &:hover{
+        color: $blue;
+    }
+}
+
+
+.active{
+    color: $blue;
+    position: relative;
+
+    &::before{
+        position: absolute;
+        content: "";
+        height: 5px;
+        background-color: $blue;
+        left: 0;
+        right: 0;
+        bottom: -43px;
+    }
+}
+
+//jumbotron style
+.jumbotron{
+    background: url('../images/jumbotron.jpg') no-repeat top;
+    background-size: cover;
+    height: 43lvh;
+}
+
+//services style
+#services{
+    figure{
+        img{
+            height: 65px;
+            max-width: 65px;
+        }
+    }
+}
+
+//footer style
+#footer-bg{
+    background: url('../images/footer-bg.jpg') center no-repeat;
+    background-size: cover;
+
+    .list-max-h{
+        max-height: 50lvh;
+    }
+
+    .footer-dc-bg{
+        background: url('../images/dc-logo-bg.png') no-repeat center;
+        background-size: cover;
+        height: 100%;
+    }
+}
+
+#footer-bottom-banner{
+        .follow-us{
+            font-size: 1.2rem;
+        }
+        .social{
+            background-color: red;
+            width: 20px;
+            padding: 10px 20px;
+            .social-icon{
+                font-size: 1.3rem;
+            }
+            
+        }
+    
+}
