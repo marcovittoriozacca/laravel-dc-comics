@@ -15,10 +15,10 @@
                     @foreach ($comics as $comic)
                     <div class="col-2">
                         <figure class="w-100 my-max-h">
-                            <img class="h-100 w-100" src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
+                            <img class="h-100 w-100" src="{{$comic->thumb}}" alt="{{$comic->title}}">
                         </figure>
                         <div class="text-white">
-                            <h5>{{$comic['title']}}</h5>
+                            <h5>{{$comic->title}}</h5>
                         </div>
                     </div>
                     @endforeach
