@@ -65,7 +65,7 @@
                 <div class="mb-3">
                     <label for="sale_date" class="form-label">Sale Date</label>
                     <input
-                        type="text"
+                        type="date"
                         class="form-control"
                         name="sale_date"
                         id="sale_date"

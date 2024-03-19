@@ -1,4 +1,4 @@
-@extends('layouts.mainLayout');
+@extends('layouts.mainLayout')
 
 @section('pageTitle', 'Single Comic')
 
@@ -13,22 +13,23 @@
         <p>{{$comic->description}}</p>
         <h3>${{$comic->price}}</h3>
         <h4>{{$comic->series}}</4>
+        <h4>{{$comic->sale_date}}</4>
         <p>{{$comic->type}}</p>
     </div>
 
 
-        <a href="{{route('comics.edit', $comic->id)}}"
-            class="btn btn-warning px-4">
-            Clicca per modificare il fumetto
-        </a>
+    <a href="{{route('comics.edit', $comic->id)}}"
+        class="btn btn-warning px-4">
+        Clicca per modificare il fumetto
+    </a>
 
-        <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
-            @csrf
-            @method("DELETE")
-            <button type="submit" class="btn btn-danger px-4">
-                Clicca per eliminare il fumetto
-            </button>
-        </form>
+    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+        @csrf
+        @method("DELETE")
+        <button type="submit" class="btn btn-danger px-4">
+            Clicca per eliminare il fumetto
+        </button>
+    </form>
 </div>
 
 @endsection

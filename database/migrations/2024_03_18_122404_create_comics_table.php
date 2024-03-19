@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
 
             //for now all nullable
-            $table->string('title')->nullable();
-            $table->text('description')->nullable();
-            $table->string('thumb')->nullable();
-            $table->decimal('price')->nullable();
-            $table->string('series')->nullable();
+            $table->string('title', 50);
+            $table->text('description');
+            $table->string('thumb', 150)->nullable();
+            $table->decimal('price', 5,2);
+            $table->string('series', 100)->nullable();
             $table->date('sale_date')->nullable();
-            $table->string('type')->nullable();
+            $table->string('type', 50)->nullable();
 
             $table->timestamps();
         });
