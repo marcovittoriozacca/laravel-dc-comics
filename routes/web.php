@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\ComicsController as ComicsController;
+use App\Http\Controllers\Guest\PageController as PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//home controller
+Route::get('/', [PageController::class, 'index']);
 
+//comics controller
 Route::resource('comics', ComicsController::class);
