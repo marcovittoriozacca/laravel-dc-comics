@@ -1,15 +1,16 @@
 @extends('layouts.mainLayout')
 
-@section('pageTitle', 'Add Comic')
+@section('pageTitle', 'Edit Comic')
 
 @section('mainContent')
     
     <div class="bg-dark text-white shadow-lg mb-4">
-        <h1 class="text-center py-2">Add Comic</h1>
+        <h1 class="text-center py-2">Edit Comic - {{$comic->title}}</h1>
     </div>
-    <form action="{{route('comics.store')}}" method="POST">
+    <form action="{{route('comics.update', $comic->id)}}" method="POST">
+        @csrf
+        @method('PUT')
         <div class="container">
-            @csrf
             <div class="row">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
@@ -18,13 +19,13 @@
                         class="form-control"
                         name="title"
                         id="title"
-                        required
+                        value="{{old($comic->title)?? $comic->title }}"
                     />
                 </div>
                 
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+                    <textarea class="form-control" name="description" id="description" rows="5" >{!! old($comic->description) ?? $comic->description !!}</textarea>
                 </div>
     
                 <div class="mb-3">
@@ -35,7 +36,7 @@
                         name="thumb"
                         id="thumb"
                         placeholder="link here..."
-                        required
+                        value="{{old($comic->thumb)?? $comic->thumb }}"
                     />
                 </div>
     
@@ -48,7 +49,7 @@
                         id="price"
                         min="0"
                         step="any"
-                        required
+                        value="{{old($comic->price)?? $comic->price }}"
                     />
                 </div>
                 <div class="mb-3">
@@ -58,7 +59,7 @@
                         class="form-control"
                         name="series"
                         id="series"
-                        required
+                        value="{{old($comic->series)?? $comic->series }}"                        
                     />
                 </div>
                 <div class="mb-3">
@@ -68,7 +69,7 @@
                         class="form-control"
                         name="sale_date"
                         id="sale_date"
-                        required
+                        value="{{old($comic->sale_date)?? $comic->sale_date }}"                        
                     />
                 </div>
                 <div class="mb-3">
@@ -78,15 +79,13 @@
                         class="form-control"
                         name="type"
                         id="type"
-                        required
+                        value="{{old($comic->type)?? $comic->type }}"  
                     />
                 </div>
             </div>
             <button type="submit" class="btn btn-primary text-white mb-4">
-                Add Comic
+                Update Comic
             </button>
         </div>
     </form>
-
-
 @endsection

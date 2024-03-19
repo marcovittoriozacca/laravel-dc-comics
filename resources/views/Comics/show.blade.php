@@ -15,6 +15,12 @@
         <h4>{{$comic->series}}</4>
         <p>{{$comic->type}}</p>
     </div>
+
+
+        <a href="{{route('comics.edit', $comic->id)}}"
+            class="btn btn-warning px-4">
+            Clicca per modificare il fumetto
+        </a>
 </div>
 
 @endsection
