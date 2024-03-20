@@ -10,6 +10,15 @@
     <form action="{{route('comics.store')}}" method="POST">
         <div class="container">
             @csrf
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)    
+                    <p class="text-capitalize">
+                        {{$error}}
+                    </p>
+                    @endforeach
+                </div>
+            @endif
             <div class="row">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
