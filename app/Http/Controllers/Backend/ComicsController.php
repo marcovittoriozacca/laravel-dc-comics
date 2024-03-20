@@ -44,7 +44,7 @@ class ComicsController extends Controller
             'title' => 'required|max:50',
             'description' => 'required',
             'thumb' => 'max:150',
-            'price' => 'required|decimal:5,2',
+            'price' => 'required|numeric|between:0,999.99',
             'series' => 'max:100',
             'date' => 'date',
             'type' => 'max:50',
@@ -94,12 +94,11 @@ class ComicsController extends Controller
             'title' => 'required|max:50',
             'description' => 'required',
             'thumb' => 'max:150',
-            'price' => 'required|decimal:5,2',
+            'price' => 'required|numeric|between:0,999.99',
             'series' => 'max:100',
             'date' => 'date',
             'type' => 'max:50',
         ]);
-        
         $update_data = $request->all();
         $comic->update($update_data);
 
