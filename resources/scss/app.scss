@@ -1,6 +1,19 @@
 @use './partials/variables' as *;
 @import "bootstrap/scss/bootstrap";
-
+.custom-margin-bottom{
+    margin-bottom: 80px;
+}
+.custom-top-value{
+    top: -80%;
+}
+.price-label{
+    background-color: $lime-green;
+}
+.comic-label{
+    background-color: $light-blue;
+    color: white;
+    padding-inline: 1em;
+}
 .my-blue-color{
     color: $blue;
 }
