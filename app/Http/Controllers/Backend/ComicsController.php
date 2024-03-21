@@ -40,20 +40,20 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+
+        $validation = $request->validate([
             'title' => 'required|max:50',
             'description' => 'required',
-            'thumb' => 'max:150',
+            'thumb' => 'nullable|max:150',
             'price' => 'required|numeric|between:0,999.99',
-            'series' => 'max:100',
-            'date' => 'date',
-            'type' => 'max:50',
+            'series' => 'nullable|max:100',
+            'sale_date' => 'nullable|date',
+            'type' => 'nullable|max:50',
         ]);
 
         //creiamo il nuovo fumetto
-        $formData = $request->all();
         $newComic = new Comic();
-        $newComic->fill($formData);
+        $newComic->fill($validation);
         $newComic->save();
 
         return redirect()->route('comics.index');
@@ -90,17 +90,16 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $request->validate([
+        $validation = $request->validate([
             'title' => 'required|max:50',
             'description' => 'required',
-            'thumb' => 'max:150',
+            'thumb' => 'nullable|max:150',
             'price' => 'required|numeric|between:0,999.99',
-            'series' => 'max:100',
-            'date' => 'date',
-            'type' => 'max:50',
+            'series' => 'nullable|max:100',
+            'sale_date' => 'nullable|date',
+            'type' => 'nullable|max:50',
         ]);
-        $update_data = $request->all();
-        $comic->update($update_data);
+        $comic->update($validation);
 
         return redirect()->route('comics.index');
         
